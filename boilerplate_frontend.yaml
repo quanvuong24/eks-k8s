@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: boilerplate-frontend
+  labels:
+    app: boilerplate-frontend
+spec:
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: boilerplate-frontend
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: boilerplate-frontend
+  labels:
+    app: boilerplate-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boilerplate-frontend
+  template:
+    metadata:
+      labels:
+        app: boilerplate-frontend
+    spec:
+      containers:
+        - name: boilerplate-frontend
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v1
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
