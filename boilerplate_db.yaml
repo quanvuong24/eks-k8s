@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: boilerplate-db
+  labels:
+    app: boilerplate-db
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: boilerplate-db
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: boilerplate-db
+  labels:
+    app: boilerplate-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boilerplate-db
+  template:
+    metadata:
+      labels:
+        app: boilerplate-db
+    spec:
+      containers:
+        - name: boilerplate-db
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/mysql:8.0.12
+          ports:
+            - name: http
+              containerPort: 3306
+              protocol: TCP
