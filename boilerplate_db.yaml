@@ -8,7 +8,7 @@ spec:
   type: NodePort
   ports:
     - port: 3306
-      targetPort: http
+      targetPort: 3306
       protocol: TCP
       name: boilerplate-db
   selector:

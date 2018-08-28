@@ -8,9 +8,9 @@ spec:
   type: NodePort
   ports:
     - port: 4500
-      targetPort: http
+      targetPort: 4500
       protocol: TCP
-      name: http
+      name: boilerplate-backend
   selector:
     app: boilerplate-backend
 
