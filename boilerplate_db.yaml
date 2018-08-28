@@ -35,7 +35,7 @@ spec:
       containers:
         - name: boilerplate-db
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-db:8.0.12
-          command: ["--default-authentication-plugin=mysql_native_password"]
+          args: ["--default-authentication-plugin=mysql_native_password"]
           ports:
             - name: boilerplate-db
               containerPort: 3306
