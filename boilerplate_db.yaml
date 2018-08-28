@@ -10,7 +10,7 @@ spec:
     - port: 3306
       targetPort: http
       protocol: TCP
-      name: http
+      name: boilerplate-db
   selector:
     app: boilerplate-db
 
@@ -34,8 +34,8 @@ spec:
     spec:
       containers:
         - name: boilerplate-db
-          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/mysql:8.0.12
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-db:8.0.12
           ports:
-            - name: http
+            - name: boilerplate-db
               containerPort: 3306
               protocol: TCP

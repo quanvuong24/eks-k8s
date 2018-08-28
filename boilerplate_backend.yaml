@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: boilerplate-backend
+  labels:
+    app: boilerplate-backend
+spec:
+  type: NodePort
+  ports:
+    - port: 4500
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: boilerplate-backend
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: boilerplate-backend
+  labels:
+    app: boilerplate-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boilerplate-backend
+  template:
+    metadata:
+      labels:
+        app: boilerplate-backend
+    spec:
+      containers:
+        - name: boilerplate-backend
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-be:v1
+          ports:
+            - name: http
+              containerPort: 4500
+              protocol: TCP
