@@ -5,7 +5,7 @@ metadata:
   labels:
     app: boilerplate-backend
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 4500
       targetPort: 4500
