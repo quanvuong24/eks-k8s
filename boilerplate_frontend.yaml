@@ -7,7 +7,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 3000
+    - port: 80
       targetPort: 3000
       protocol: TCP
       name: boilerplate-frontend
@@ -34,7 +34,10 @@ spec:
     spec:
       containers:
         - name: boilerplate-frontend
-          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v1
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v2
+          env:
+          - name: BE_URL
+            value: "http://aec352f51ac2911e8b85a0aea3d51daf-2132069829.us-east-1.elb.amazonaws.com"
           ports:
             - name: http
               containerPort: 3000
