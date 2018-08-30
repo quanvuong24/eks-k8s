@@ -16,13 +16,13 @@ spec:
 
 ---
 
-#apiVersion: v1
-#kind: ConfigMap
-#metadata:
-#  name: be-config
-#namespace: default
-#data:
-#  be.url: very
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: be-config
+namespace: default
+data:
+  be.url: aec352f51ac2911e8b85a0aea3d51daf-2132069829.us-east-1.elb.amazonaws.com
 
 ---
 apiVersion: extensions/v1beta1
@@ -46,7 +46,10 @@ spec:
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v6
           env:
           - name: BE_URL
-            value: "aec352f51ac2911e8b85a0aea3d51daf-2132069829.us-east-1.elb.amazonaws.com"
+            valueFrom:
+              configMapKeyRef:
+                name: be-config
+                key: be.url
           ports:
             - name: http
               containerPort: 3000
