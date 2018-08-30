@@ -38,5 +38,5 @@ spec:
           command: ["/bin/bash", "-c", "yarn start"]
           ports:
             - name: http
-              containerPort: 4000
+              containerPort: 4500
               protocol: TCP
