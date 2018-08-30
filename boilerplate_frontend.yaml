@@ -45,11 +45,11 @@ spec:
         - name: boilerplate-frontend
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v6
           env:
-          - name: BE_URL
-            valueFrom:
-              configMapKeyRef:
-                name: be-config
-                key: be.url
+            - name: BE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: be-config
+                  key: be.url
           ports:
             - name: http
               containerPort: 3000
