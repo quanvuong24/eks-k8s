@@ -7,7 +7,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 444
+    - port: 4000
       targetPort: 4500
       protocol: TCP
       name: boilerplate-backend
@@ -35,8 +35,11 @@ spec:
       containers:
         - name: boilerplate-backend
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v1
-          command: ["/bin/bash", "-c", "yarn start"]
+          env:
+          - name: DB_URL
+            value: "10.100.254.27"
+          command: ["/bin/bash", "-c", "yarn seed && yarn start"]
           ports:
             - name: http
-              containerPort: 444
+              containerPort: 4000
               protocol: TCP
