@@ -7,7 +7,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 4000
+    - port: 80
       targetPort: 4500
       protocol: TCP
       name: boilerplate-backend
