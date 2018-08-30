@@ -6,6 +6,9 @@ metadata:
     app: boilerplate-frontend
 spec:
   type: LoadBalancer
+  env:
+  - name: BE_URL
+    value: "aec352f51ac2911e8b85a0aea3d51daf-2132069829.us-east-1.elb.amazonaws.com"
   ports:
     - port: 80
       targetPort: 3000
@@ -35,9 +38,6 @@ spec:
       containers:
         - name: boilerplate-frontend
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v6
-          env:
-          - name: BE_URL
-            value: "aec352f51ac2911e8b85a0aea3d51daf-2132069829.us-east-1.elb.amazonaws.com"
           ports:
             - name: http
               containerPort: 3000
