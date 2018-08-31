@@ -42,7 +42,7 @@ spec:
     spec:
       containers:
         - name: boilerplate-frontend
-          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v11
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate:v12
           env:
             - name: BE_URL
               valueFrom:
