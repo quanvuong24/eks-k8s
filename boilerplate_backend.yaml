@@ -1,43 +1,43 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: boilerplate-backend
+  name: boilerplate-backend-svc
   labels:
-    app: boilerplate-backend
+    app: boilerplate-backend-svc
 spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: boilerplate-backend
+      targetPort: be-port
       protocol: TCP
-      name: boilerplate-backend
+      name: be-lb
   selector:
-    app: boilerplate-backend
+    app: boilerplate-backend-svc
 
 ---
 
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: boilerplate-backend
+  name: boilerplate-backend-deploy
   labels:
-    app: boilerplate-backend
+    app: boilerplate-backend-deploy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: boilerplate-backend
+      app: boilerplate-backend-deploy
   template:
     metadata:
       labels:
         app: boilerplate-backend
     spec:
       containers:
-        - name: boilerplate-backend
+        - name: boilerplate-be
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v5
           command: ["/bin/sh"]
           args: ["-c", "yarn start"]
           ports:
-            - name: http
+            - name: be-port
               containerPort: 4500
               protocol: TCP
