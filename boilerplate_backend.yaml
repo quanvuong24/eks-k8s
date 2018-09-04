@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: boilerplate-backend-svc
+  name: boilerplate-backend
   labels:
-    app: boilerplate-backend-svc
+    app: boilerplate-backend
 spec:
   type: LoadBalancer
   ports:
@@ -12,25 +12,25 @@ spec:
       protocol: TCP
       name: be-lb
   selector:
-    app: boilerplate-backend-svc
+    app: boilerplate-backend
 
 ---
 
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: boilerplate-backend-deploy
+  name: boilerplate-backend
   labels:
-    app: boilerplate-backend-deploy
+    app: boilerplate-backend
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: boilerplate-backend-deploy
+      app: boilerplate-backend
   template:
     metadata:
       labels:
-        app: boilerplate-backend-deploy
+        app: boilerplate-backend
     spec:
       containers:
         - name: boilerplate-be
