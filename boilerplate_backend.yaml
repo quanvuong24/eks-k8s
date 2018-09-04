@@ -8,7 +8,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 4500
+      targetPort: boilerplate-backend
       protocol: TCP
       name: boilerplate-backend
   selector:
