@@ -8,9 +8,9 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 3000
+      targetPort: fe-port
       protocol: TCP
-      name: boilerplate-frontend
+      name: fe-lb
   selector:
     app: boilerplate-frontend
 
@@ -50,6 +50,6 @@ spec:
                   name: be-config
                   key: be.url
           ports:
-            - name: http
+            - name: fe-port
               containerPort: 3000
               protocol: TCP
