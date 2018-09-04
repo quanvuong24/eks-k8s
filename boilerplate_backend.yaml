@@ -30,7 +30,7 @@ spec:
   template:
     metadata:
       labels:
-        app: boilerplate-backend
+        app: boilerplate-backend-deploy
     spec:
       containers:
         - name: boilerplate-be
