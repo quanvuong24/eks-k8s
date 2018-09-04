@@ -34,9 +34,9 @@ spec:
     spec:
       containers:
         - name: boilerplate-backend
-          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v3
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v4
           command: ["/bin/sh"]
-          args: ["-c", "yarn start"]
+          args: ["-c", "yarn seed"]
           ports:
             - name: http
               containerPort: 4500
