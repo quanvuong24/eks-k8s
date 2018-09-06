@@ -41,7 +41,10 @@ spec:
             - name: be-port
               containerPort: 4500
               protocol: TCP
+          volumeMounts:
+            - mountPath: "/backend/logs"
+              name: efs-boilerplate-vol
       volumes:
-      - name: efs-boilerplate-vol
-        persistentVolumeClaim:
-          claimName: efs-boilerplate-claim
+        - name: efs-boilerplate-vol
+          persistentVolumeClaim:
+            claimName: efs-boilerplate-claim
