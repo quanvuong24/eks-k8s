@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
         - name: boilerplate-be
-          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v5
+          image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v6
           command: ["/bin/sh"]
           args: ["-c", "yarn seed"]
           ports:
