@@ -21,7 +21,7 @@ kind: ConfigMap
 metadata:
   name: be-config
 data:
-  be.url: aba30238cb1bd11e899300a2fa58a648-1226704682.us-east-1.elb.amazonaws.com
+  be.url: a5c98ea96b4ae11e8bbac0aeac7f6707-2029763778.us-east-1.elb.amazonaws.com
 
 ---
 apiVersion: extensions/v1beta1
