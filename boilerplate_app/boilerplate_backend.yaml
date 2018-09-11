@@ -36,7 +36,7 @@ spec:
         - name: boilerplate-be
           image: 125181119024.dkr.ecr.us-east-1.amazonaws.com/boilerplate-backend:v6
           command: ["/bin/sh"]
-          args: ["-c", "yarn start"]
+          args: ["-c", "yarn seed"]
           ports:
             - name: be-port
               containerPort: 4500
