@@ -10,7 +10,6 @@ spec:
   selector:
     matchLabels:
       component: fluentd-logging
-  replicas: 1
   template:
     metadata:
       labels:
