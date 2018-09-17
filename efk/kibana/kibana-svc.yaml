@@ -12,3 +12,20 @@ spec:
     port: 80
     targetPort: http
   type: LoadBalancer
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: kibana
+    annotations:
+        kubernetes.io/ingress.class: traefik
+        ingress.kubernetes.io/auth-type: "basic"
+        ingress.kubernetes.io/auth-secret: kibana-basic-auth
+spec:
+    rules:
+      - http:
+            paths:
+                - path: /
+                  backend:
+                      serviceName: kibana
+                      servicePort: http
