@@ -24,8 +24,8 @@ metadata:
 spec:
     rules:
       - http:
-            paths:
-                - path: /
-                  backend:
-                      serviceName: kibana
-                      servicePort: http
+          paths:
+          - path: /
+            backend:
+              serviceName: kibana
+              servicePort: http
