@@ -20,8 +20,6 @@ spec:
         env:
         - name: CLUSTER_NAME
           value: myesdb
-        - name: SERVER_BASEPATH
-          value: /kibana:5601
         resources:
           limits:
             cpu: 1000m
