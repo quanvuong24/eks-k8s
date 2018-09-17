@@ -39,16 +39,11 @@ spec:
             cpu: 100m
             memory: 200Mi
         volumeMounts:
-        - name: localdata
-          mountPath: /localdata
         - name: varlibdockercontainers
           mountPath: /var/lib/docker/containers
           readOnly: true
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: localdata
-        hostPath:
-          path: /localdata
       - name: varlibdockercontainers
         hostPath:
           path: /var/lib/docker/containers
