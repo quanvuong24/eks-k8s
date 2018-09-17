@@ -10,7 +10,7 @@ spec:
   ports:
   - name: http
     port: 80
-    targetPort: http
+    targetPort: 5601
   type: LoadBalancer
 ---
 apiVersion: extensions/v1beta1
