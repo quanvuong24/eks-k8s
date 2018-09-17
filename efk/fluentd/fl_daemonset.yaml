@@ -17,8 +17,8 @@ spec:
         version: v1
         kubernetes.io/cluster-service: "true"
     spec:
-      serviceAccount: fluentd # if you have RBAC enabled
-      serviceAccountName: fluentd # if you have RBAC enabled
+      #serviceAccount: fluentd # if you have RBAC enabled
+      #serviceAccountName: fluentd # if you have RBAC enabled
       tolerations:
       - key: node-role.kubernetes.io/master
         effect: NoSchedule
