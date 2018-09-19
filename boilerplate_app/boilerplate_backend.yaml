@@ -42,8 +42,8 @@ spec:
               containerPort: 4500
               protocol: TCP
           volumeMounts:
-            - mountPath: "/backend/logs"
-              name: efs-boilerplate-vol
+            #- mountPath: "/backend/logs"
+            #  name: efs-boilerplate-vol
             - mountPath: /backend/logs
               name: backendlogs
       volumes:
