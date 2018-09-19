@@ -3,12 +3,12 @@ kind: DaemonSet
 metadata:
   name: fluentd
   labels:
-    app: "boilerplate-backend"
+    name: fluentd-backend
 spec:
   template:
     metadata:
       labels: # Select app/svc/component to transmit log to ES
-        app: "boilerplate-backend"
+        name: fluentd-backend
     spec:
       serviceAccount: fluentd
       serviceAccountName: fluentd
