@@ -54,3 +54,4 @@ spec:
         - name: backendlogs
           hostPath:
             path: /backend/logs
+            type: DirectoryOrCreate
