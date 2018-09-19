@@ -9,7 +9,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: boilerplate-backend
+      component: boilerplate-backend
   template:
     metadata:
       labels:
