@@ -3,9 +3,7 @@ kind: DaemonSet
 metadata:
   name: fluentd
   labels:
-    k8s-app: fluentd-logging
-    version: v1
-    kubernetes.io/cluster-service: "true"
+    app: boilerplate-backend
 spec:
   template:
     metadata:
