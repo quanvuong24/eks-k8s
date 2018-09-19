@@ -3,14 +3,12 @@ kind: DaemonSet
 metadata:
   name: fluentd
   labels:
-    app: boilerplate-backend
+    app: fluentd-boilerplate-backend
 spec:
   template:
     metadata:
-      labels:
-        k8s-app: fluentd-logging
-        version: v1
-        kubernetes.io/cluster-service: "true"
+      labels: # Select app/svc/component to transmit log to ES
+        app: boilerplate-backend
     spec:
       serviceAccount: fluentd
       serviceAccountName: fluentd
