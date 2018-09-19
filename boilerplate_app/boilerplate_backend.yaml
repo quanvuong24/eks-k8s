@@ -44,6 +44,8 @@ spec:
           volumeMounts:
             - mountPath: "/backend/logs"
               name: efs-boilerplate-vol
+            - mountPath: "/backend/logs"
+              name: backendlogs
       volumes:
         - name: efs-boilerplate-vol
           persistentVolumeClaim:
