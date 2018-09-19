@@ -7,14 +7,14 @@ metadata:
     version: v1
     kubernetes.io/cluster-service: "true"
 spec:
-  selector:
-    app: boilerplate-backend
   template:
     metadata:
       labels:
         k8s-app: fluentd-logging
         version: v1
         kubernetes.io/cluster-service: "true"
+    selector:
+      app: boilerplate-backend
     spec:
       serviceAccount: fluentd
       serviceAccountName: fluentd
