@@ -10,11 +10,10 @@ data:
     </match>
     <source>
       @type tail
-      path /var/log/containers/*.log
-      pos_file /var/log/fluentd-containers.log.pos
+      path /backend/logs/*.log
       time_format %Y-%m-%dT%H:%M:%S.%NZ
-      tag kubernetes.*
-      format json
+      tag boilerplate.*
+      format none
       read_from_head true
     </source>
     <filter kubernetes.**>
