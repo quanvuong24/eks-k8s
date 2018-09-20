@@ -8,10 +8,6 @@ data:
     <match fluent.**>
       @type null
     </match>
-    <match *.log>
-      @type file
-      path /backend/logs/*.log
-    </match>
     <filter kubernetes.**>
       @type kubernetes_metadata
     </filter>
