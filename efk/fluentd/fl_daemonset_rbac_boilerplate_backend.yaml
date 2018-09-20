@@ -13,18 +13,12 @@ data:
       path /backend/logs/*.log
       time_format %Y-%m-%dT%H:%M:%S.%NZ
       tag boilerplate-be
-      <parse>
-        @type multi_format
-        <pattern>
-          format json
-          time_key timestamp
-        </pattern>
-        <pattern>
-          format none
-        </pattern>
-      </parse>
+      format json
       read_from_head true
     </source>
+    <match boilerplate-be>
+      @type stdout
+    </match>
     <filter kubernetes.**>
       @type kubernetes_metadata
     </filter>
