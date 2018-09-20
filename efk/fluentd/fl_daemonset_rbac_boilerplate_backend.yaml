@@ -8,14 +8,10 @@ data:
     <match fluent.**>
       @type null
     </match>
-    <source>
-      @type tail
+    <match *.log>
+      @type file
       path /backend/logs/*.log
-      time_format %Y-%m-%dT%H:%M:%S.%NZ
-      tag *
-      format json
-      read_from_head true
-    </source>
+    </match>
     <filter kubernetes.**>
       @type kubernetes_metadata
     </filter>
