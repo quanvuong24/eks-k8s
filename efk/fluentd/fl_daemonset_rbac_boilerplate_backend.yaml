@@ -13,7 +13,9 @@ data:
       path /backend/logs/*.log
       time_format %Y-%m-%dT%H:%M:%S.%NZ
       tag *
-      format json
+      <parse>
+        @type multiline
+      </parse>
       read_from_head true
     </source>
     <filter kubernetes.**>
