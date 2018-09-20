@@ -77,9 +77,14 @@ spec:
         volumeMounts:
         - name: backendlogs
           mountPath: /backend/logs
+        - name: fluentconfig
+          mountPath: /fluentd/etc/
           readOnly: false
       terminationGracePeriodSeconds: 30
       volumes:
       - name: backendlogs
         hostPath:
           path: /backend/logs
+      - name: fluentconfig
+        configMap:
+          name: fluentdconf
