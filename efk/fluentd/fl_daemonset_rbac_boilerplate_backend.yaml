@@ -13,8 +13,6 @@ data:
       path /backend/logs/*.log
       pos_file /backend/logs/*.log.pos
       time_format %Y-%m-%dT%H:%M:%S.%NZ
-      tag kubernetes.*
-      format json
       read_from_head true
     </source>
     <filter kubernetes.**>
