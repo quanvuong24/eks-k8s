@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: filebeat
+  labels:
+    app: filebeat
+spec:
+  template:
+    metadata:
+      labels:
+        app: filebeat
+      name: filebeat
+    spec:
+      containers:
+      - name: filebeat
+        image: quay.io/cdis/elk-filebeat
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 50m
+            memory: 50Mi
+        env:
+          - name: LOGSTASH_HOSTS
+            value: logstash-application:5044
+          - name: LOG_LEVEL
+            value: info
+          - name: FILEBEAT_HOST
+            valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+        volumeMounts:
+        - name: backendlogs
+          mountPath: /backend/logs
+          readOnly: false
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      volumes:
+      - name: backendlogs
+        hostPath:
+          path: /backend/logs
