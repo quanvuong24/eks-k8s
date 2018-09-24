@@ -6,14 +6,8 @@ data:
   filebeat.yml: |
     filebeat.registry_file: /var/tmp/filebeat/filebeat_registry # store the registry on the host filesystem so it doesn't get lost when pods are stopped
     filebeat.prospectors:
-    # process all docker container logs, which are stored as json
     - input_type: log
-      fields:
-          host: ${FILEBEAT_HOST:${HOSTNAME}}
-          type: app-logs
-      fields_under_root: true
       paths:
         - /backend/logs/*.log
     output.logstash:
       hosts: ["logstash-application:5044"]
-      timeout: 60
