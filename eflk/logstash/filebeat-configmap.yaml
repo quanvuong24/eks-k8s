@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: logging-configmap
+  name: filebeat-configmap
 data:
   filebeat.yml: |
     filebeat.registry_file: /var/tmp/filebeat/filebeat_registry # store the registry on the host filesystem so it doesn't get lost when pods are stopped
