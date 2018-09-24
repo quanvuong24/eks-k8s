@@ -40,3 +40,9 @@ spec:
       - name: backendlogs
         hostPath:
           path: /backend/logs
+      - name: config-volume
+        configMap:
+          name: filebeat-configmap
+          items:
+            - key: filebeat.yml
+              path: filebeat.yml
