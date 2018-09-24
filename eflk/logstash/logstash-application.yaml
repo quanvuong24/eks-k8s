@@ -6,9 +6,8 @@ metadata:
 data:
   logstash.conf: |-
     input {
-      tcp {
+      beats {
         port => 5044
-        codec => "json"
       }
     }
     output {
