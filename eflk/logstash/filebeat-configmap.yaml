@@ -8,12 +8,6 @@ data:
     filebeat.prospectors:
     # process all docker container logs, which are stored as json
     - input_type: log
-      symlinks: true
-      json.message_key: log
-      json.keys_under_root: true
-      json.add_error_key: true
-      multiline.pattern: '^\s'
-      multiline.match: after
       fields:
           host: ${FILEBEAT_HOST:${HOSTNAME}}
           type: app-logs
@@ -22,18 +16,3 @@ data:
         - /backend/logs/*.log
     output.logstash:
       hosts: ["logstash-application:5044"]
-  kibana.yml: |
-    ## Default Kibana configuration from kibana-docker.
-    ## from https://github.com/elastic/kibana-docker/blob/master/build/kibana/config/kibana.yml
-    #
-    #server.host: "0"
-    elasticsearch.url: http://elasticsearch:9200
-    ## Disable X-Pack
-    ## see https://www.elastic.co/guide/en/x-pack/current/xpack-settings.html
-    ##     https://www.elastic.co/guide/en/x-pack/current/installing-xpack.html#xpack-enabling
-    #
-    xpack.security.enabled: false
-    xpack.monitoring.enabled: false
-    xpack.ml.enabled: false
-    xpack.graph.enabled: false
-    xpack.reporting.enabled: false
