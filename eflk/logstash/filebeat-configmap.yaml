@@ -16,3 +16,4 @@ data:
         - /backend/logs/*.log
     output.logstash:
       hosts: ["logstash-application:5044"]
+      timeout: 60
