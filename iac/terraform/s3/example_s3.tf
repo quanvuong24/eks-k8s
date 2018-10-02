@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = "us-east-1"
+  region     = "us-west-1"
 }
 
 # New resource for the S3 bucket our application will use.
