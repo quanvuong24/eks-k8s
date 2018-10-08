@@ -30,5 +30,5 @@ output "ami" {
 }
 
 output "ip" {
-  value = "${example.ip.public_ip}"
+  value = "${aws_instance.example.ip.public_ip}"
 }
