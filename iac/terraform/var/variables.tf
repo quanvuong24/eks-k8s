@@ -25,10 +25,14 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
 }
 
+resource "aws_eip" "ip" {
+  instance = "${aws_instance.example.id}"
+}
+
 output "ami" {
   value = "${lookup(var.amis, var.region)}"
 }
 
 output "ip" {
-  value = "${aws_instance.example.ip.public_ip}"
+  value = "${aws_eip.ip.public_ip}"
 }
