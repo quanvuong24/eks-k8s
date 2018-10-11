@@ -1,3 +1,4 @@
+/*
 terraform {
   backend "consul" {
     address = "demo.consul.io"
@@ -6,3 +7,4 @@ terraform {
     scheme  = "https"
   }
 }
+*/
