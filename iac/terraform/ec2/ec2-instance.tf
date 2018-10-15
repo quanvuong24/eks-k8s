@@ -12,7 +12,7 @@ module "ec2_cluster" {
   source = "terraform-aws-modules/ec2-instance/aws"
 
   name           = "my-cluster"
-  instance_count = 2
+  instance_count = 1
 
   ami                           = "ami-cfe4b2b0"
   instance_type                 = "t2.micro"
