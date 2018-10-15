@@ -36,7 +36,8 @@ module "sg_test" {
   vpc_id      = "vpc-2e591156"
 
   ingress_cidr_blocks      = ["0.0.0.0/0"]
-  #ingress_rules            = ["http-80-tcp", "ssh-tcp"]
+  ingress_rules            = ["http-80-tcp", "ssh-tcp"]
+  /*
   ingress_with_cidr_blocks = [
     {
       from_port   = 80
@@ -53,4 +54,5 @@ module "sg_test" {
       cidr_blocks = "0.0.0.0/0"
     }
   ]
+  */
 }
