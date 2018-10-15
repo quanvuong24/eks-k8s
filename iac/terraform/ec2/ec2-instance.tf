@@ -35,7 +35,7 @@ module "sg_test" {
   description = "Security group for testing Terraform with custom ports open within VPC publicly open HTTP/HTTPS port 80/443"
   vpc_id      = "vpc-2e591156"
 
-  ingress_cidr_blocks      = ["${var.my_cidr_blocks}"]
+  ingress_cidr_blocks      = ["0.0.0.0/0"]
   #ingress_rules            = ["http-80-tcp", "ssh-tcp"]
   ingress_with_cidr_blocks = [
     {
@@ -43,14 +43,14 @@ module "sg_test" {
       to_port     = 80
       protocol    = "tcp"
       description = "http"
-      cidr_blocks = "${var.my_cidr_blocks}"
+      cidr_blocks = "0.0.0.0/0"
     },
     {
       from_port   = 22
       to_port     = 22
       protocol    = "tcp"
       description = "ssh"
-      cidr_blocks = "${var.my_cidr_blocks}"
+      cidr_blocks = "0.0.0.0/0"
     }
   ]
 }
