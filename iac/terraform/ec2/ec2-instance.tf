@@ -25,7 +25,7 @@ module "ec2_cluster" {
                                     #!/bin/bash
                                     sudo yum update -y
                                     sudo yum install puppet -y
-                                  EOF
+                                  -EOF
   tags = {
     Terraform = "true"
     Environment = "dev"
