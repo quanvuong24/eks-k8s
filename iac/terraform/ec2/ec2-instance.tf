@@ -48,9 +48,9 @@ module "sg_test" {
     {
       from_port   = 22
       to_port     = 22
-      protocol    = "ssh"
+      protocol    = "tcp"
       description = "ssh"
       cidr_blocks = "${var.my_cidr_blocks}"
-    },
+    }
   ]
 }
