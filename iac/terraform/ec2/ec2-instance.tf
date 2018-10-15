@@ -31,7 +31,7 @@ module "ec2_cluster" {
 module "sg_test" {
   source = "terraform-aws-modules/security-group/aws"
 
-  name        = "sg-terra"
+  name        = "terra-test"
   description = "Security group for testing Terraform with custom ports open within VPC publicly open HTTP/HTTPS port 80/443"
   vpc_id      = "vpc-2e591156"
 
