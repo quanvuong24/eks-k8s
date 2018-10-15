@@ -12,7 +12,7 @@ module "ec2_cluster" {
   instance_type          = "t2.micro"
   key_name               = "EC2Keypair"
   monitoring             = true
-  vpc_security_group_ids = ["MyEC2DMZ"]
+  vpc_security_group_ids = ["sg-885b5bfd"]
   subnet_id              = "subnet-ce04b8e1"
 
   tags = {
