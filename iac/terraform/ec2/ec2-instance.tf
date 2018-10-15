@@ -37,6 +37,7 @@ module "sg_test" {
 
   ingress_cidr_blocks      = ["0.0.0.0/0"]
   ingress_rules            = ["http-80-tcp", "ssh-tcp"]
+  egress_rules             = ["all-all"]
   /*
   ingress_with_cidr_blocks = [
     {
