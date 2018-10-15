@@ -8,7 +8,7 @@ module "ec2_cluster" {
   name           = "my-cluster"
   instance_count = 2
 
-  ami                    = "ami-ebd02392"
+  ami                    = "ami-cfe4b2b0"
   instance_type          = "t2.micro"
   key_name               = "EC2Keypair"
   monitoring             = true
