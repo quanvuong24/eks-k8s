@@ -21,7 +21,11 @@ module "ec2_cluster" {
   vpc_security_group_ids        = ["${module.sg_test.this_security_group_id}"]
   subnet_id                     = "subnet-ce04b8e1"
   associate_public_ip_address   = true
-  user_data                     = ${file("bootstrap.tf")}
+  user_data                     = <<EOF
+                                    #!/bin/bash
+                                    sudo yum update -y
+                                    sudo yum install puppet -y
+                                  EOF
   tags = {
     Terraform = "true"
     Environment = "dev"
