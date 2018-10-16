@@ -23,8 +23,8 @@ module "ec2_cluster" {
   associate_public_ip_address   = true
   user_data                     = <<EOF
                                     #!/bin/bash
-                                    sudo yum update -y
-                                    sudo yum install puppet -y
+                                    yum update -y
+                                    yum install puppet -y
                                   EOF
   tags = {
     Terraform = "true"
